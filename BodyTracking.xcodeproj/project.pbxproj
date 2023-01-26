@@ -11,6 +11,9 @@
 		3669D9AD2982425F00A369A0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3669D9AC2982425F00A369A0 /* ContentView.swift */; };
 		3669D9AF2982426000A369A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3669D9AE2982426000A369A0 /* Assets.xcassets */; };
 		3669D9B22982426000A369A0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3669D9B12982426000A369A0 /* Preview Assets.xcassets */; };
+		3669D9B92982434E00A369A0 /* ARViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3669D9B82982434E00A369A0 /* ARViewContainer.swift */; };
+		3669D9BB298244A200A369A0 /* SkeletonJoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3669D9BA298244A200A369A0 /* SkeletonJoint.swift */; };
+		3669D9BD298244E100A369A0 /* SkeletonBone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3669D9BC298244E100A369A0 /* SkeletonBone.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,9 @@
 		3669D9AC2982425F00A369A0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3669D9AE2982426000A369A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3669D9B12982426000A369A0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3669D9B82982434E00A369A0 /* ARViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewContainer.swift; sourceTree = "<group>"; };
+		3669D9BA298244A200A369A0 /* SkeletonJoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonJoint.swift; sourceTree = "<group>"; };
+		3669D9BC298244E100A369A0 /* SkeletonBone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonBone.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +59,9 @@
 			children = (
 				3669D9AA2982425F00A369A0 /* BodyTrackingApp.swift */,
 				3669D9AC2982425F00A369A0 /* ContentView.swift */,
+				3669D9B82982434E00A369A0 /* ARViewContainer.swift */,
+				3669D9BA298244A200A369A0 /* SkeletonJoint.swift */,
+				3669D9BC298244E100A369A0 /* SkeletonBone.swift */,
 				3669D9AE2982426000A369A0 /* Assets.xcassets */,
 				3669D9B02982426000A369A0 /* Preview Content */,
 			);
@@ -138,7 +147,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3669D9AD2982425F00A369A0 /* ContentView.swift in Sources */,
+				3669D9BD298244E100A369A0 /* SkeletonBone.swift in Sources */,
 				3669D9AB2982425F00A369A0 /* BodyTrackingApp.swift in Sources */,
+				3669D9B92982434E00A369A0 /* ARViewContainer.swift in Sources */,
+				3669D9BB298244A200A369A0 /* SkeletonJoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +282,7 @@
 				DEVELOPMENT_TEAM = 8844SK6A7R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Need access to enable augmented reality.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -299,6 +312,7 @@
 				DEVELOPMENT_TEAM = 8844SK6A7R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Need access to enable augmented reality.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
