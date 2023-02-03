@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3667CE05298D51C50001632C /* ARSkeleton+Bone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3667CE04298D51C50001632C /* ARSkeleton+Bone.swift */; };
 		3669D9AB2982425F00A369A0 /* BodyTrackingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3669D9AA2982425F00A369A0 /* BodyTrackingApp.swift */; };
 		3669D9AD2982425F00A369A0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3669D9AC2982425F00A369A0 /* ContentView.swift */; };
 		3669D9AF2982426000A369A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3669D9AE2982426000A369A0 /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3667CE04298D51C50001632C /* ARSkeleton+Bone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARSkeleton+Bone.swift"; sourceTree = "<group>"; };
 		3669D9A72982425F00A369A0 /* BodyTracking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BodyTracking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3669D9AA2982425F00A369A0 /* BodyTrackingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyTrackingApp.swift; sourceTree = "<group>"; };
 		3669D9AC2982425F00A369A0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 				3669D9AA2982425F00A369A0 /* BodyTrackingApp.swift */,
 				3669D9AC2982425F00A369A0 /* ContentView.swift */,
 				3669D9B82982434E00A369A0 /* ARViewContainer.swift */,
+				3667CE04298D51C50001632C /* ARSkeleton+Bone.swift */,
 				36916EFA298C0035006C9AEE /* ARSkeleton+JointName.swift */,
 				3669D9BA298244A200A369A0 /* SkeletonJoint.swift */,
 				3669D9BC298244E100A369A0 /* SkeletonBone.swift */,
@@ -159,6 +162,7 @@
 				3669D9AB2982425F00A369A0 /* BodyTrackingApp.swift in Sources */,
 				3669D9B92982434E00A369A0 /* ARViewContainer.swift in Sources */,
 				3669D9BB298244A200A369A0 /* SkeletonJoint.swift in Sources */,
+				3667CE05298D51C50001632C /* ARSkeleton+Bone.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
