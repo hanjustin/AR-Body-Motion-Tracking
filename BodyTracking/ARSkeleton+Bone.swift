@@ -18,14 +18,13 @@ public extension ARSkeleton {
         var name: String { from.rawValue + "-" + to.rawValue }
         
         static let allBones: [Bone] = {
-           [leftShoulderToLeftArm, leftArmToLeftForearm, leftForearmToLeftHand,
-            rightShoulderToRightArm, rightArmToRightForearm, rightForearmToRightHand,
-            spine7ToLeftShoulder, spine7ToRightShoulder,
-            neck1ToSpine7, spine7ToSpine6, spine6ToSpine5,
-            hipsToLeftUpLeg, leftUpLegToLeftLeg, leftLegToLeftFoot,
-            hipsToRightUpLeg, rightUpLegToRightLeg, rightLegToRightFoot,
-           ]
+           [leftArmBones, rightArmBones, spineBones, leftLegBones, rightLegBones].flatMap { $0 }
         }()
+        private static let leftArmBones = [leftShoulderToLeftArm, leftArmToLeftForearm, leftForearmToLeftHand]
+        private static let rightArmBones = [rightShoulderToRightArm, rightArmToRightForearm, rightForearmToRightHand]
+        private static let spineBones = [spine7ToLeftShoulder, spine7ToRightShoulder, neck1ToSpine7, spine7ToSpine6, spine6ToSpine5]
+        private static let leftLegBones = [hipsToLeftUpLeg, leftUpLegToLeftLeg, leftLegToLeftFoot]
+        private static let rightLegBones = [hipsToRightUpLeg, rightUpLegToRightLeg, rightLegToRightFoot]
         
         static let leftShoulderToLeftArm = Bone(from: .leftShoulder, to: .leftArm)
         static let leftArmToLeftForearm = Bone(from: .leftArm, to: .leftForearm)
