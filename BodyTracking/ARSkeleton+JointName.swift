@@ -8,11 +8,11 @@
 import Foundation
 import ARKit
 
-public func == (lhs: ARSkeleton.JointName, rhs: ARSkeleton.JointName) -> Bool {
+func == (lhs: ARSkeleton.JointName, rhs: ARSkeleton.JointName) -> Bool {
     return lhs.rawValue == rhs.rawValue
 }
 
-public func ~= (lhs: ARSkeleton.JointName, rhs: ARSkeleton.JointName) -> Bool {
+func ~= (lhs: ARSkeleton.JointName, rhs: ARSkeleton.JointName) -> Bool {
     return lhs.rawValue == rhs.rawValue
 }
 

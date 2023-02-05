@@ -1,5 +1,5 @@
 //
-//  BodySkeleton.swift
+//  BodySkeletonEntity.swift
 //  BodyTracking
 //
 //  Created by Justin Lee on 1/26/23.
@@ -9,7 +9,7 @@ import Foundation
 import ARKit
 import RealityKit
 
-class BodySkeleton: Entity {
+class BodySkeletonEntity: Entity {
     var joints: [String: Entity] = [:]
     var bones: [String: Entity] = [:]
     

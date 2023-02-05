@@ -35,7 +35,7 @@ extension ARViewContainer {
     }
     
     class Coordinator: NSObject, ARSessionDelegate {
-        private var bodySkeleton: BodySkeleton?
+        private var bodySkeleton: BodySkeletonEntity?
         private let bodySkeletonAnchor: AnchorEntity
         
         init(bodySkeletonAnchor: AnchorEntity) {
@@ -56,7 +56,7 @@ extension ARViewContainer {
         }
         
         private func firstTimeInitialization(with bodyAnchor: ARBodyAnchor) {
-            let newBodySkeleton = BodySkeleton(for: bodyAnchor)
+            let newBodySkeleton = BodySkeletonEntity(for: bodyAnchor)
             bodySkeleton = newBodySkeleton
             bodySkeletonAnchor.addChild(newBodySkeleton)
         }
