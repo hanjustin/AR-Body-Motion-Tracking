@@ -8,8 +8,10 @@
 import Foundation
 import ARKit
 
-func == (lhs: ARSkeleton.JointName, rhs: ARSkeleton.JointName) -> Bool {
-    return lhs.rawValue == rhs.rawValue
+//  Overload ~= to convert key paths into patterns.
+//  i.e. using instance computed property \.isSpineJoint in switch statement
+func ~=<T>(lhs: KeyPath<T, Bool>, rhs: T?) -> Bool {
+    rhs?[keyPath: lhs] ?? false
 }
 
 func ~= (lhs: ARSkeleton.JointName, rhs: ARSkeleton.JointName) -> Bool {
@@ -44,6 +46,19 @@ public extension ARSkeleton.JointName {
     static let jaw = Joint(rawValue: Name.jaw)
     static let chin = Joint(rawValue: Name.chin)
     static let nose = Joint(rawValue: Name.nose)
+    
+    // Some joints are not actively tracked by ARKit. They just follow the motion of the closest tracked parent joint.
+    var isTrackedJoint: Bool {
+        let activelyTracked: Bool
+        switch self {
+        case .jaw, .chin, .nose,
+            \.isLeftEyeJoint, \.isRightEyeJoint, \.isLeftFingersJoint, \.isRightFingersJoint, \.isLeftToesJoint, \.isRightToesJoint:
+            activelyTracked = false
+        default:
+            activelyTracked = true
+        }
+        return activelyTracked
+    }
     
     // MARK: - Instance Prefix Check Methods
     

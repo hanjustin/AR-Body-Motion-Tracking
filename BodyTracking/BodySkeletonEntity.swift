@@ -15,7 +15,10 @@ class BodySkeletonEntity: Entity {
     
     // MARK: - Init
     
-    required init(for bodyAnchor: ARBodyAnchor) {
+    required init(
+        for bodyAnchor: ARBodyAnchor,
+        with jointUICustomization: (ARSkeleton.JointName) -> (radius: Float, color: UIColor))
+    {
         super.init()
     }
     

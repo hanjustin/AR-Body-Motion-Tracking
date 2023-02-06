@@ -10,7 +10,9 @@ import RealityKit
 import ARKit
 
 class BoneEntity: Entity, HasModel, HasPhysics {
-    var bone: ARSkeleton.Bone
+    private var bone: ARSkeleton.Bone
+    var jointFrom: ARSkeleton.JointName { bone.jointFrom }
+    var jointTo: ARSkeleton.JointName { bone.jointTo }
     
     required init(bone: ARSkeleton.Bone, length: Float, diameter: Float = Constants.defaultDiameter, color: UIColor = .white) {
         self.bone = bone

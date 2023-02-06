@@ -23,11 +23,11 @@ struct ARViewContainer: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: ARView, context: Context) {
-        
+        // nothing to do
     }
 }
 
-// MARK: - ARSessionDelegate
+// MARK: - Coordinator
 
 extension ARViewContainer {
     func makeCoordinator() -> Coordinator {
@@ -45,8 +45,8 @@ extension ARViewContainer {
         func session(_ session: ARSession, didUpdate anchors: [ARAnchor]) {
             for anchor in anchors {
                 guard let bodyAnchor = anchor as? ARBodyAnchor else { continue }
-                
                 let didDetectBodyForTheFirstTime = bodySkeleton == nil
+                
                 if didDetectBodyForTheFirstTime {
                     firstTimeInitialization(with: bodyAnchor)
                 } else {
@@ -55,10 +55,44 @@ extension ARViewContainer {
             }
         }
         
+        func jointUICustomization(for joint: ARSkeleton.JointName) -> (radius: Float, color: UIColor) {
+            var jointRadius = UIConstants.Radius.XLarge
+            let jointColor = joint.isTrackedJoint ? UIConstants.Color.trackedJoint : UIConstants.Color.notTrackedJoint
+            
+            switch joint {
+            case .leftShoulder, .rightShoulder, .head, \.isNeckJoint:
+                jointRadius = UIConstants.Radius.medium
+            case .jaw, .chin, .nose, \.isLeftEyeJoint, \.isRightEyeJoint, \.isLeftFingersJoint, \.isRightFingersJoint:
+                jointRadius = UIConstants.Radius.small
+            case \.isLeftToesJoint, \.isRightToesJoint:
+                jointRadius = UIConstants.Radius.medium
+            case \.isSpineJoint:
+                jointRadius = UIConstants.Radius.large
+            default:
+                break
+            }
+            
+            return (jointRadius, jointColor)
+        }
+        
         private func firstTimeInitialization(with bodyAnchor: ARBodyAnchor) {
-            let newBodySkeleton = BodySkeletonEntity(for: bodyAnchor)
+            let newBodySkeleton = BodySkeletonEntity(for: bodyAnchor, with: jointUICustomization)
             bodySkeleton = newBodySkeleton
             bodySkeletonAnchor.addChild(newBodySkeleton)
+        }
+        
+        private enum UIConstants {
+            enum Color {
+                static let notTrackedJoint = UIColor.yellow
+                static let trackedJoint = UIColor.green
+            }
+            
+            enum Radius {
+                static let XLarge: Float = 0.05
+                static let large = XLarge * 0.75
+                static let medium = XLarge * 0.5
+                static let small = XLarge * 0.25
+            }
         }
     }
 }
