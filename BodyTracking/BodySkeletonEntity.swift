@@ -31,7 +31,8 @@ class BodySkeletonEntity: Entity {
     // MARK: - Public Methods
     
     func update(with bodyAnchor: ARBodyAnchor) {
-
+        updateJoints(with: bodyAnchor)
+        updateBones(with: bodyAnchor)
     }
     
     // MARK: - Private Methods
@@ -57,6 +58,31 @@ class BodySkeletonEntity: Entity {
             let boneEntity = BoneEntity(bone: bone, length: length)
             bones.insert(boneEntity)
             addChild(boneEntity)
+        }
+    }
+    
+    private func updateJoints(with bodyAnchor: ARBodyAnchor) {
+        for joint in joints {
+            if
+                let jointTransform = bodyAnchor.skeleton.modelTransform(for: joint.name),
+                let worldPosition = bodyAnchor.getPositionInWorldCoordinates(for: joint.name)
+            {
+                joint.position = worldPosition
+                joint.orientation = Transform(matrix: jointTransform).rotation
+            }
+        }
+    }
+    
+    private func updateBones(with bodyAnchor: ARBodyAnchor) {
+        for bone in bones {
+            guard
+                let jointFromPosition = bodyAnchor.getPositionInWorldCoordinates(for: bone.jointFrom),
+                let jointToPosition = bodyAnchor.getPositionInWorldCoordinates(for: bone.jointTo)
+            else { continue }
+            
+            let boneCenter = (jointFromPosition + jointToPosition) / 2
+            bone.position = boneCenter
+            bone.look(at: jointToPosition, from: boneCenter, relativeTo: nil) // set orientation for bone
         }
     }
 }
