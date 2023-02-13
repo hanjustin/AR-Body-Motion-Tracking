@@ -44,6 +44,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		364D21D8299A02E30084E611 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				367965EA298FEA8B00E80003 /* BoneEntity.swift */,
+				367965EC298FEADD00E80003 /* JointEntity.swift */,
+				3669D9BE2982A97000A369A0 /* BodySkeletonEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		364D21D9299A02FD0084E611 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3669D9AC2982425F00A369A0 /* ContentView.swift */,
+				3669D9B82982434E00A369A0 /* ARViewContainer.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		364D21DA299A03250084E611 /* ARSkeleton+Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3667CE04298D51C50001632C /* ARSkeleton+Bone.swift */,
+				36916EFA298C0035006C9AEE /* ARSkeleton+JointName.swift */,
+			);
+			path = "ARSkeleton+Extensions";
+			sourceTree = "<group>";
+		};
 		3669D99E2982425F00A369A0 = {
 			isa = PBXGroup;
 			children = (
@@ -64,13 +92,9 @@
 			isa = PBXGroup;
 			children = (
 				3669D9AA2982425F00A369A0 /* BodyTrackingApp.swift */,
-				3669D9AC2982425F00A369A0 /* ContentView.swift */,
-				3669D9B82982434E00A369A0 /* ARViewContainer.swift */,
-				3667CE04298D51C50001632C /* ARSkeleton+Bone.swift */,
-				36916EFA298C0035006C9AEE /* ARSkeleton+JointName.swift */,
-				3669D9BE2982A97000A369A0 /* BodySkeletonEntity.swift */,
-				367965EA298FEA8B00E80003 /* BoneEntity.swift */,
-				367965EC298FEADD00E80003 /* JointEntity.swift */,
+				364D21D9299A02FD0084E611 /* View */,
+				364D21D8299A02E30084E611 /* Entity */,
+				364D21DA299A03250084E611 /* ARSkeleton+Extensions */,
 				3669D9AE2982426000A369A0 /* Assets.xcassets */,
 				3669D9B02982426000A369A0 /* Preview Content */,
 			);
