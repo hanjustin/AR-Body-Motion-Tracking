@@ -1,6 +1,6 @@
 ![Swift Version](https://img.shields.io/badge/Swift-5.4+-Green) ![Xcode](https://img.shields.io/badge/Xcode-14.2-blue) ![Platform iOS](https://img.shields.io/badge/platform-iOS-lightgrey) ![Contact](https://img.shields.io/badge/contact-justin.lee.iosdev%40gmail.com-yellowgreen)
 
-# Demo
+# Demo video - [Download1](/Demo/BodyMotion.gif), [Download2](/Demo/Treadmill.gif)
 <p align="center">
   <img alt="Light" src="./Demo/BodyMotion.gif" width="45%">
 &nbsp; &nbsp; &nbsp; &nbsp;
